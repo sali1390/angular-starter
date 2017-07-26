@@ -1,0 +1,39 @@
+<h1 style="font-family: Century">Create A Hero's Story</h1>
+<form style="font-family: Century; font-size: 15px;">
+    <!--Binds a text input to a specific model with the document view model and a variable-->
+    Name: <input type="text" ng-model="DashboardVM.heroName"><br>
+    Gender: <input type="radio" value="male" ng-model="DashboardVM.heroGender">Male <input type="radio" value="female" ng-model="DashboardVM.heroGender">Female <input type="radio" value="binary" ng-model="DashboardVM.heroGender">Binary <br>
+    City: <input type="text" ng-model="DashboardVM.heroCity"><br>
+</form>
+<form>
+    Fights A: <input type="text" ng-model="DashboardVM.heroOpponent"><br>
+    Outcome: <input type="radio" value="wins" ng-model="DashboardVM.heroOutcome">Wins <input type="radio" value="loses" ng-model="DashboardVM.heroOutcome">Loses<br>
+</form>
+
+<hr>
+
+<!--New directiv-->
+<span ng-if="DashboardVM.heroName !== ''">
+    There once was a hero named {{DashboardVM.heroName}}.
+</span>
+
+<span ng-if="DashboardVM.heroName !== '' && DashboardVM.heroGender !== '' && DashboardVM.heroCity !== ''">
+    {{DashboardVM.heroGenderWord}} lived in a great castle outside of the Grand City {{DashboardVM.heroCity}}.
+</span>
+
+<span ng-if="DashboardVM.heroName !== '' && DashboardVM.heroGender !== '' && DashboardVM.heroCity !== '' && DashboardVM.heroOpponent !== ''">
+    One day, {{DashboardVM.heroName}} fights a {{DashboardVM.heroOpponent}}.
+</span>
+
+<span ng-if="DashboardVM.heroName !== '' && DashboardVM.heroGender !== '' && DashboardVM.heroCity !== '' && DashboardVM.heroOpponent !== '' && DashboardVM.heroOutcome !== ''">
+    <span ng-if="DashboardVM.heroOutcome === 'wins'">
+        {{DashboardVM.heroGenderWord}} won and the city is saved!
+    </span>
+    <span ng-if="DashboardVM.heroOutcome === 'loses'">
+        {{DashboardVM.heroGenderWord}} lost and the {{DashboardVM.heroOpponent}} ate all of the people!
+    </span>
+</span>
+
+<!-- {{DashboardVM.heroGender}} <br> -->
+
+

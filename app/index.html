@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS - Create A Hero's Story</title>
+
+        <!--
+          Here we include the Angular JS library JS and the Angular UI-Router library.
+          Angular UI-Router is not a built in angular library but makes routing much easier.
+          In Angular 2, Angular adopts this concept of routing and it is included.
+        -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+    </head>
+
+    <!--Tells Angular which module to use for the app/page startup-->
+    <body ng-app="createAHero">
+        <ui-view></ui-view>
+
+        <!--Make sure to link all modules and routes-->
+        <script type="text/javascript" src="create-a-hero/createAHero.module.js"></script>
+        <script type="text/javascript" src="create-a-hero/features/dashboard/dashboard.module.js"></script>
+        <script type="text/javascript" src="create-a-hero/features/dashboard/dashboard.route.js"></script>
+        <script type="text/javascript" src="create-a-hero/features/dashboard/dashboard.controller.js"></script>
+    </body>
+</html>
